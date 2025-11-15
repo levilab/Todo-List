@@ -1,0 +1,220 @@
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Layout */
+.main-content {
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background-color: #fff;
+  border-right: 1px solid #ddd;
+  padding: 1rem;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+.title h1 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+.projectBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+#addProject {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#addProject:hover {
+  background-color: #43a047;
+}
+.collapsible {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.collapsible::before {
+  content: "▼";
+}
+.collapsible.collapsed::before {
+  content: "►";
+}
+
+/* Project list */
+.total-projects {
+  margin-top: 0.5rem;
+}
+.total-projects.collapsed {
+  display: none;
+}
+.blockProject {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0.6rem;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+.project {
+  flex-grow: 1;
+  padding: 0.2rem 0.4rem;
+}
+.project:hover {
+  background-color: #e0e0e0;
+}
+.project.active {
+  background-color: #d0d0d0;
+  font-weight: bold;
+}
+#removeProject {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#removeProject:hover {
+  background-color: #d32f2f;
+}
+
+/* Task section */
+.taskSection {
+  flex-grow: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+.task-detail {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.task {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.task.completed label {
+  text-decoration: line-through;
+  color: #aaa;
+}
+.taskLabelEdit {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btnAndLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.task input[type="checkbox"] {
+  accent-color: #1976d2;
+}
+.editProject {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Deadline and priority */
+.timeAndPriority {
+  text-align: right;
+  font-size: 0.85rem;
+}
+.timeAndPriority div:first-child {
+  font-weight: bold;
+  color: #d32f2f;
+}
+.timeAndPriority div:last-child {
+  font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  color: white;
+}
+.timeAndPriority div:last-child.low {
+  background-color: #4caf50;
+}
+.timeAndPriority div:last-child.medium {
+  background-color: #fb8c00;
+}
+.timeAndPriority div:last-child.high {
+  background-color: #e53935;
+}
+
+/* Add task button */
+#addTask {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#addTask:hover {
+  background-color: #1565c0;
+}
+
+/* Dialogs */
+dialog {
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  background-color: #fff;
+}
+dialog form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+dialog input,
+dialog select {
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+dialog button {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #1976d2;
+  color: white;
+  cursor: pointer;
+}
+dialog button:hover {
+  background-color: #1565c0;
+}
