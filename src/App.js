@@ -52,7 +52,7 @@ export class App {
     }
     
     addProjectDialog() {
-        const dialog = document.getElementById("taskDialog")
+        const dialog = document.getElementById("projectDialog")
         dialog.showModal()
 
         const addConfirmBtn = document.getElementById("add")
